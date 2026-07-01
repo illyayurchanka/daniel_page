@@ -1,0 +1,374 @@
+---
+// src/pages/index.astro
+import danielPortrait from '../assets/IndexPage/Daniel_Face.png';
+import pioneersBanner from '../assets/pioneers-of-pagonia/BigPicture.jpg';
+import unheardBanner from '../assets/unheard-scream/BigPicture.PNG';
+import dodgeballBanner from '../assets/magic-dodgeball/BigArt.png';
+import kinpathBanner from '../assets/kin-path/BigPicture.jpg';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Daniel Velitskiy Portfolio | Game Designer</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header class="top-nav">
+			<div class="nav-left">Daniel Velitskiy Portfolio | Game De...</div>
+		</header>
+
+		<main class="container">
+			<h1 class="page-title">Daniel Velitskiy Portfolio | Game Designer</h1>
+
+			<section class="hero-section">
+				<img src={danielPortrait.src} alt="Daniel Velitskiy" class="profile-image" />
+
+				<div class="hero-content">
+					<p class="bio-text">
+						Game Designer with studio experience in designing core mechanics, systems balancing, and level design. Creator of <strong>Unheard Scream</strong> (60,000+ downloads) and <strong>Magic Dodgeball: Homeless Edition</strong> (exhibited at Gamescom 2025).
+					</p>
+
+					<blockquote class="testimonial">
+						<p class="quote-text">
+							"Daniel demonstrated outstanding dedication and a detailed understanding of complex game design. His analytical skills highly contributed to identifying and evaluating flaws, and he carried out his responsibilities with a high degree of independence."
+						</p>
+						<cite class="quote-author">— Volker Wertich, Creative Director (Envision Entertainment / Creator of The Settlers)</cite>
+					</blockquote>
+
+					<div class="contact-links">
+						<a href="mailto:velickijdaniel@gmail.com" class="contact-link">
+							<span class="link-icon">✉</span> velickijdaniel@gmail.com
+						</a>
+						<a href="#" class="contact-link">
+							<span class="link-icon">🔗</span> [LinkedIn Profile]
+						</a>
+						<a href="#" class="contact-link download-cv">
+							<span class="link-icon">📄</span> [Download My CV].pdf <span class="file-size">252.8 KiB</span>
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<hr class="section-divider" />
+
+			<section class="skills-section">
+				<h2>Core Skills & Tools</h2>
+				<ul class="skills-list">
+					<li>
+						<strong>Core Design Expertise:</strong> Mechanic Conceptualization & Edge Case Logic, Core Loop & Meta-Progression Design, Systems & Economy Balancing, Level Design, Game Design Documentation (GDD).
+					</li>
+					<li>
+						<strong>Software & Engines:</strong> Unreal Engine, Unity, Miro, Excel, Jira (Scrum), Autodesk Maya.
+					</li>
+				</ul>
+			</section>
+
+			<section class="games-section">
+				<div class="games-header">
+					<h2>Featured Games</h2>
+				</div>
+
+                <div class="games-grid">
+                    <a href="/pioneers-of-pagonia" class="game-card">
+                        <img src={pioneersBanner.src} alt="Pioneers of Pagonia" class="card-image" />
+                        <div class="card-info">
+                            <h3>Pioneers of Pagonia</h3>
+                        </div>
+                    </a>
+
+                    <a href="/unheard-scream" class="game-card">
+                        <img src={unheardBanner.src} alt="Unheard Scream" class="card-image" />
+                        <div class="card-info">
+                            <h3>Unheard Scream</h3>
+                        </div>
+                    </a>
+
+                    <a href="/magic-dodgeball" class="game-card">
+                        <img src={dodgeballBanner.src} alt="Magic Dodgeball" class="card-image" />
+                        <div class="card-info">
+                            <h3>Magic Dodgeball</h3>
+                        </div>
+                    </a>
+
+                    <a href="/kinpath" class="game-card">
+                        <img src={kinpathBanner.src} alt="KinPath" class="card-image" />
+                        <div class="card-info">
+                            <h3>KinPath</h3>
+                        </div>
+                    </a>
+                </div>
+			</section>
+		</main>
+	</body>
+</html>
+
+<style>
+	/* Global Resets and Theme Variables */
+	:root {
+		--bg-color: #191919;
+		--text-main: #ffffff;
+		--text-muted: rgba(255, 255, 255, 0.6);
+		--border-color: rgba(255, 255, 255, 0.1);
+		--block-placeholder: #2c2c2c;
+		--font-stack: 'Inter', system-ui, -apple-system, sans-serif;
+	}
+
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		background-color: var(--bg-color);
+		color: var(--text-main);
+		font-family: var(--font-stack);
+		line-height: 1.6;
+		padding-bottom: 5rem;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	/* Top Navigation Bar */
+	.top-nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.5rem 1.5rem;
+		border-bottom: 1px solid var(--border-color);
+		font-size: 0.85rem;
+		color: var(--text-muted);
+	}
+
+	.nav-right {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.nav-right .icon {
+		cursor: pointer;
+	}
+
+	.nav-btn {
+		background: transparent;
+		border: 1px solid var(--border-color);
+		color: var(--text-main);
+		padding: 0.2rem 0.5rem;
+		border-radius: 4px;
+		font-size: 0.8rem;
+		cursor: pointer;
+	}
+
+	/* Container Layout */
+	.container {
+		max-width: 1080px;
+		margin: 0 auto;
+		padding: 3rem 1.5rem;
+	}
+
+	.page-title {
+		font-size: 2.25rem;
+		font-weight: 700;
+		margin-bottom: 2.5rem;
+		letter-spacing: -0.02em;
+	}
+
+	/* Hero Section Split Layout */
+	.hero-section {
+		display: grid;
+		grid-template-columns: 280px 1fr;
+		gap: 2.5rem;
+		align-items: start;
+		margin-bottom: 3rem;
+	}
+
+	@media (max-width: 768px) {
+		.hero-section {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	/* Profile Image */
+	.profile-image {
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		border-radius: 6px;
+		object-fit: cover;
+	}
+
+	/* Hero Text Blocks */
+	.hero-content {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+
+	.bio-text {
+		font-size: 1rem;
+		color: rgba(255, 255, 255, 0.9);
+	}
+
+	/* Blockquote Styling */
+	.testimonial {
+		border-left: 3px solid rgba(255, 255, 255, 0.3);
+		padding-left: 1.25rem;
+		margin: 0.5rem 0;
+	}
+
+	.quote-text {
+		font-style: italic;
+		color: rgba(255, 255, 255, 0.85);
+		font-size: 0.95rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.quote-author {
+		display: block;
+		font-size: 0.85rem;
+		color: var(--text-muted);
+		font-style: normal;
+	}
+
+	/* Contact & File Links */
+	.contact-links {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		margin-top: 0.5rem;
+	}
+
+	.contact-link {
+		color: var(--text-muted);
+		text-decoration: none;
+		font-size: 0.9rem;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		width: fit-content;
+	}
+
+	.contact-link:hover {
+		color: var(--text-main);
+		text-decoration: underline;
+	}
+
+	.download-cv {
+		color: rgba(255, 255, 255, 0.8);
+	}
+
+	.file-size {
+		font-size: 0.75rem;
+		color: rgba(255, 255, 255, 0.4);
+		margin-left: 0.25rem;
+	}
+
+	/* Layout Partitions */
+	.section-divider {
+		border: 0;
+		border-top: 1px solid var(--border-color);
+		margin: 2.5rem 0;
+	}
+
+	/* Skills Section */
+	.skills-section h2, .games-header h2 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		margin-bottom: 1rem;
+		color: var(--text-main);
+	}
+
+	.skills-list {
+		list-style-type: none;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.skills-list li {
+		font-size: 0.95rem;
+		color: rgba(255, 255, 255, 0.85);
+		position: relative;
+		padding-left: 1.25rem;
+	}
+
+	.skills-list li::before {
+		content: "•";
+		position: absolute;
+		left: 0;
+		color: var(--text-muted);
+	}
+
+	/* Games Section Structure */
+	.games-section {
+		margin-top: 3rem;
+	}
+
+	.games-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1.25rem;
+	}
+
+	.games-controls {
+		display: flex;
+		gap: 0.75rem;
+		color: var(--text-muted);
+		font-size: 0.9rem;
+		cursor: pointer;
+	}
+
+	/* Cards Grid System */
+	.games-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1rem;
+	}
+
+	@media (max-width: 900px) {
+		.games-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (max-width: 480px) {
+		.games-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.game-card {
+		background: #202020;
+		border-radius: 8px;
+		overflow: hidden;
+		border: 1px solid var(--border-color);
+		transition: transform 0.2s ease;
+	}
+
+	.game-card:hover {
+		transform: translateY(-2px);
+	}
+
+	.card-image {
+		width: 100%;
+		aspect-ratio: 16 / 10;
+		object-fit: cover;
+		display: block;
+	}
+
+	.card-info {
+		padding: 0.75rem;
+	}
+
+	.card-info h3 {
+		font-size: 0.9rem;
+		font-weight: 500;
+		color: var(--text-main);
+	}
+</style>

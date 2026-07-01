@@ -1,0 +1,222 @@
+---
+import ProjectLayout from '../layouts/ProjectLayout.astro';
+import YouTubeVideo from '../components/YouTubeVideo.astro';
+
+//assets
+import bannerSrc from '../assets/magic-dodgeball/BigArt.png';
+import miroMindmap from '../assets/magic-dodgeball/first_image.png';
+import uiWireframes from '../assets/magic-dodgeball/second_image.png';
+import componentHierarchy from '../assets/magic-dodgeball/third_image.png';
+import upgradesMatrix from '../assets/magic-dodgeball/forth_image.png';
+import playtestData from '../assets/magic-dodgeball/fifth_image.png';
+import arena1 from '../assets/magic-dodgeball/six_image.png';
+import vidSevens from '../assets/magic-dodgeball/sevens_image.mp4';
+import arena2 from '../assets/magic-dodgeball/eight_image.png';
+
+const projectMeta = [
+	{ label: '⏰ Created', value: 'June 15, 2026 4:08 PM' },
+	{ label: '💼 Role', value: 'Project Lead, Game Designer, Level Designer' },
+	{ label: '📅 Timeline', value: 'Feb 2025 – Apr 2026' },
+	{ label: '👥 Team Size', value: '7' },
+	{ label: '⚙️ Engine', value: 'Unity' },
+	{ label: '🖥️ Platform', value: 'PC' }
+];
+---
+
+<ProjectLayout
+	title="Magic Dodgeball: Homeless Edition"
+	icon="🏀"
+	bannerText="MAGIC DODGEBALL BANNER ARTWORK"
+	bannerImage={bannerSrc.src}
+	currentBreadcrumb="🏀 Magic Dodgeball: Homeless Edition"
+	metadata={projectMeta}
+>
+	<section class="content-section">
+		<h3>Overview</h3>
+		<p class="steam-link-wrapper">
+			<a href="https://store.steampowered.com/" target="_blank" rel="noopener noreferrer" class="steam-link">
+				🔗 Play Magic Dodgeball on Steam
+			</a>
+		</p>
+        <YouTubeVideo id="uJ4Gj_d0pX0" title="Magic Dodgeball: Homeless Edition Trailer" />
+
+		<blockquote class="note-box">
+			<p><em>The trailer demonstrates an incomplete version of the game, in particular, the outdated design and visuals for arenas. You can find final versions of arenas on this page below.</em></p>
+		</blockquote>
+
+		<div class="body-text">
+			<p>
+				Magic Dodgeball: Homeless Edition is a fast-paced, arena-based bullet hell with rogue-like elements.
+			</p>
+			<p>
+				I originally pitched the concept for this game and served as the primary vision keeper throughout its entire development cycle. Leading a multidisciplinary team, I built the core gameplay loop from scratch and took ownership of the system design and arena layouts. Seeing the project grow from an initial idea into a fully playable demo exhibited live at Gamescom 2025 was an incredible validation of our team's hard work.
+			</p>
+		</div>
+	</section>
+
+	<section class="content-section">
+		<h2>My Responsibilities & Impact</h2>
+		<ul class="impact-list">
+			<li>
+				<strong>Core Systems & Upgrade Design:</strong> I developed the primary gameplay loop and designed over 30 distinct player upgrades. By carefully iterating on these power-ups, I significantly enhanced the game's variety and replayability while keeping the overarching competitive balance intact.
+			</li>
+			<li>
+				<strong>Level Design:</strong> I was responsible for the spatial pacing of the game. I designed and grayboxed level layouts specifically focused on supporting dynamic, fast-paced arena combat and readable player movement.
+			</li>
+			<li>
+				<strong>Creative Leadership & Documentation & UI:</strong> To ensure a consistent vision across the art, programming, and design teams, I created and continuously maintained the central Game Design Documentation (GDD). I maintained it visually using Miro. I also drafted the core UI schemes and component lists for our UI designer to execute.
+			</li>
+		</ul>
+	</section>
+
+	<section class="content-section">
+		<h2>Development Deep Dive</h2>
+
+		<div class="deep-dive-block">
+			<h3>1. Visual Game Design & UI Planning</h3>
+			<p>
+				Because the core mechanics were relatively contained, I chose to maintain our Game Design Documentation visually in Miro. This allowed me to clearly map out the game loop, upgrade synergies, and required UI elements, making it much easier to deliver clear, actionable tasks to the programming and UI teams.
+			</p>
+
+			<div class="document-grid">
+				<img src={miroMindmap.src} alt="Miro Mindmap Loop" class="doc-image" />
+				<img src={uiWireframes.src} alt="UI Wireframes" class="doc-image" />
+				<img src={componentHierarchy.src} alt="Component Hierarchy" class="doc-image" />
+			</div>
+		</div>
+
+		<div class="deep-dive-block">
+			<h3>2. Designing the 30+ Player Upgrades</h3>
+			<p>
+				<strong>The Task:</strong> To ensure the game had high replayability, we needed a wide variety of power-ups that felt impactful but didn't break the core loop.
+			</p>
+			<p>
+				<strong>The Execution:</strong> I personally conceptualized and designed almost all of the game's buffs, creating over 30 distinct player upgrades. To manage this sheer volume of mechanics, I structured them into a comprehensive priority table. This allowed me to establish an initial baseline for balancing and dictate development priority before we even began implementation.
+			</p>
+			<img src={upgradesMatrix.src} alt="Comprehensive Priority Excel Upgrades Matrix" class="asset-image" style="aspect-ratio: 16/9;" />
+		</div>
+
+		<div class="deep-dive-block">
+			<h3>3. Design Challenge: Designing and Balancing the Meta</h3>
+			<p>
+				<strong>The Problem:</strong> With over 30 distinct gameplay-changing player upgrades, the game ran a high risk of developing a stale meta where players would only pick the most overpowered upgrades and their combinations. Additionally, efficiency of different upgrades couldn’t be measured and mathematically compared, since they influenced very different aspects of the gameplay.
+			</p>
+			<p>
+				<strong>The Solution:</strong> Timur (second game designer) and I established a continuous playtesting pipeline to gather hard data. Instead of relying purely on player feedback, we conducted statistical analysis on two key metrics: Pick Rates and Win Rates. The game tracked each playtest session and provided us with data about players’ choices and win rates.
+			</p>
+			<img src={playtestData.src} alt="Playtest Data Analytics Logging Output" class="asset-image" style="aspect-ratio: 16/11;" />
+			<p>
+				<strong>The Result:</strong> This data allowed me to identify statistical outliers. I was able to surgically adjust the stats of underperforming buffs and tune down the overpowered ones, resulting in a much healthier competitive ecosystem.
+			</p>
+		</div>
+
+		<div class="deep-dive-block">
+			<h3>4. Design Challenge: Arena Complexity & Variety</h3>
+			<p>
+				<strong>The Problem:</strong> Because the core game relies on a simple arena format, we quickly hit a complexity ceiling. Having multiple arenas with basic shapes didn't offer enough gameplay variety to keep players engaged long-term.
+			</p>
+			<p>
+				<strong>The Solution:</strong> I iterated on the level design to introduce specific mechanical obstacles that changed how players engaged with the space.
+			</p>
+
+			<div class="arena-sub-item">
+				<p>• <strong>Arena 1:</strong> The baseline experience featuring a simple, open shape for foundational combat.</p>
+				<img src={arena1.src} alt="Arena 1 Final Layout" class="arena-image" />
+			</div>
+
+			<div class="arena-sub-item">
+				<p>• <strong>Arena 2:</strong> I introduced a moving wall in the center of the map. This created a more interesting shape for ball bounce trajectories and dynamically blocked shooting spaces, forcing players to constantly reposition and re-aim.</p>
+				<video src={vidSevens} autoplay muted loop playsinline class="asset-video"></video>
+			</div>
+
+			<div class="arena-sub-item">
+				<p>• <strong>Arena 3:</strong> I added static obstacles in the center to break the battlefield into three distinct "lanes." This created a new meta-gameplay layer focused on hiding from projectiles, calculating trick trajectories, and carefully aiming around cover.</p>
+				<img src={arena2.src} alt="Arena 2 Final Layout" class="arena-image" />
+			</div>
+
+			<p style="margin-top: 1.5rem;">
+				<strong>The Result:</strong> We successfully created three distinct arenas that each demanded a completely different playstyle and tactical approach, despite sharing the same core mechanics. During playtesting and at Gamescom, player preference was evenly split across all three maps, proving we achieved balanced variety without any single map dominating as the "favorite" and without any other being not entertaining and different enough.
+			</p>
+		</div>
+	</section>
+</ProjectLayout>
+
+<style>
+	/* Local layout tweaks specific to Magic Dodgeball content architecture */
+	.steam-link {
+		color: var(--text-body);
+		text-decoration: underline;
+		font-size: 0.95rem;
+	}
+	.play-icon {
+		font-size: 2rem;
+		color: #ff0000;
+	}
+
+	.note-box {
+		background: #222;
+		border-left: 3px solid rgba(255,255,255,0.4);
+		padding: 0.75rem 1rem;
+		margin-bottom: 1.5rem;
+		border-radius: 0 4px 4px 0;
+		font-size: 0.9rem;
+		color: rgba(255,255,255,0.7);
+	}
+
+	/* Deep Dive 1 - Document Row layout styling */
+	.document-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.75rem;
+		margin: 1rem 0 1.5rem 0;
+	}
+
+	@media (max-width: 560px) {
+		.document-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.doc-image {
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		border-radius: 6px;
+		border: 1px solid var(--border-color);
+		object-fit: cover;
+		display: block;
+	}
+
+	/* Deep Dive 4 - Arena Sub-block layout structures */
+	.arena-sub-item {
+		margin-left: 1rem;
+		margin-top: 1.25rem;
+	}
+
+	.arena-sub-item p {
+		font-size: 0.95rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.arena-image {
+		width: 100%;
+		aspect-ratio: 16 / 10;
+		border-radius: 6px;
+		border: 1px solid var(--border-color);
+		object-fit: cover;
+		display: block;
+	}
+
+	.arena-visual-block {
+		width: 100%;
+		aspect-ratio: 16 / 10;
+		border-radius: 6px;
+		border: 1px solid var(--border-color);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: rgba(255,255,255,0.4);
+		font-size: 0.85rem;
+	}
+
+	.block-color-a3 { background-color: #2e363d; }
+</style>

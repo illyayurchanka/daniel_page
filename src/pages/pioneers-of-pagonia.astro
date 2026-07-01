@@ -1,0 +1,97 @@
+---
+import ProjectLayout from '../layouts/ProjectLayout.astro';
+import YouTubeVideo from '../components/YouTubeVideo.astro';
+
+//assets
+import bannerSrc from '../assets/pioneers-of-pagonia/BigPicture.jpg';
+
+const projectMeta = [
+	{ label: '⏰ Created', value: 'June 15, 2026 4:08 PM' },
+	{ label: '💼 Role', value: 'QA & Game Design Intern' },
+	{ label: '📅 Timeline', value: 'Nov 2025 – Jan 2026 (During the 1.0 Release Period)' },
+	{ label: '🏢 Studio', value: 'Envision Entertainment' }
+];
+---
+
+<ProjectLayout
+	title="Pioneers of Pagonia"
+	icon="🧠"
+	bannerText="PIONEERS OF PAGONIA BANNER ARTWORK"
+	bannerImage={bannerSrc.src}
+	currentBreadcrumb="🧠 Pioneers of Pagonia"
+	metadata={projectMeta}
+>
+	<section class="content-section">
+		<h3>Overview</h3>
+		<p style="margin-bottom: 1.25rem;">
+			<a href="https://store.steampowered.com/" target="_blank" rel="noopener noreferrer" style="color: var(--text-body); text-decoration: underline; font-size: 0.95rem;">
+				🔗 Play Pioneers of Pagonia on Steam
+			</a>
+		</p>
+
+        <YouTubeVideo id="Yr8Pk_JMXGw" title="Pioneers of Pagonia - Official Full Launch Trailer" />
+
+		<div class="body-text">
+			<p style="color: var(--text-body); font-size: 1rem; margin-bottom: 1.25rem;">
+				Pioneers of Pagonia is a build-up strategy game focused on exploration, complex resource management, and establishing thriving settlements.
+			</p>
+			<p style="color: var(--text-body); font-size: 1rem; margin-bottom: 1.25rem;">
+				I joined Envision Entertainment during the critical release period of the build-up strategy game, Pioneers of Pagonia. Working closely with the design and programming teams, I assisted with testing, feature documentation and actively helped balance and iterate on the game's core systems under the pressure of a 1.0 launch. Additionally, I worked with the Creative Director directly on designing the post-launch DLC content.
+			</p>
+		</div>
+	</section>
+
+	<section class="content-section">
+		<h2>My Responsibilities & Impact</h2>
+
+		<ul class="impact-list">
+			<li>
+				<strong>Systems & Combat Balancing:</strong> I improved the balancing values for units, enemy&boss encounters, buildings, and objectives. By optimizing these attributes, I helped refine the campaign's pacing and overall difficulty curve.
+			</li>
+			<li>
+				<strong>Campaign Level Design:</strong> I collaborated directly with the game designers on campaign map layouts. My primary focus was adjusting resource distribution, setting objective requirements, and identifying/removing economy bottlenecks.
+			</li>
+			<li>
+				<strong>DLC Design & Documentation:</strong> I collaborated with the Creative Director on design and documentation for post-launch DLC content. This included detailing behavioral mechanics for new entities (Dogs, Cats, Rats, Wolves) and systems like the Feeding Station and Infected Areas. Furthermore, I constructed and populated the game's Encounter Table, updating the internal legend to keep the design team aligned.
+			</li>
+			<li>
+				<strong>Data-Driven Design:</strong> To make our tuning process more accurate, I pitched and built custom data-tracking tables. This allowed the team to base future design iterations on detailed, collected analytics.
+			</li>
+			<li>
+				<strong>UX & QA Integration:</strong> I contributed to UI design iterations and provided consistent "feel-based" UX feedback. I also handled general QA tasks like smoke testing, bug reporting, and feedback evaluation using Jira and Miro.
+			</li>
+		</ul>
+	</section>
+
+	<section class="footer-notes">
+		<p class="nda-text">
+			<em>Due to NDA, I can’t share detailed design challenges and how I found solutions for them.</em>
+		</p>
+		<p>
+			You can read the full letter of recommendation detailing my contributions from Creative Director Volker Wertich below.
+		</p>
+		<p style="margin-top: 0.5rem;">
+			<a href="#" style="color: var(--text-main); text-decoration: underline; display: inline-flex; align-items: center; gap: 0.5rem;">
+				📄 [Recommendation Letter].pdf
+			</a>
+		</p>
+	</section>
+</ProjectLayout>
+
+<style>
+	/* Local structural layout rules specifically for the footnotes layout on this page */
+	.footer-notes {
+		margin-top: 3rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid var(--border-color);
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		font-size: 0.95rem;
+		color: var(--text-body);
+	}
+
+	.nda-text {
+		color: var(--text-muted);
+	}
+</style>

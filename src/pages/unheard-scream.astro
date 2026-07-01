@@ -1,0 +1,263 @@
+---
+// src/pages/unheard-scream.astro
+import ProjectLayout from '../layouts/ProjectLayout.astro';
+import YouTubeVideo from '../components/YouTubeVideo.astro';
+
+//asssets
+import bannerSrc from '../assets/unheard-scream/BigPicture.PNG';
+import miroDiagram from '../assets/unheard-scream/first_image.png';
+import vidSecond from '../assets/unheard-scream/second_image.mp4';
+import puzzleScreenshot from '../assets/unheard-scream/third_image.png';
+import vidFourth from '../assets/unheard-scream/fourth_image.mp4';
+import monsterSpreadsheet from '../assets/unheard-scream/fifth_image.png';
+import heatmapGraph from '../assets/unheard-scream/six_image.jpg';
+const projectMeta = [
+    { label: '⏰ Created', value: 'June 15, 2026 4:08 PM' },
+    { label: '💼 Role', value: 'Game Designer & Level Designer' },
+    { label: '📅 Timeline', value: 'Oct 2024 - Feb 2025' },
+    { label: '👥 Team Size', value: '6' },
+    { label: '⚙️ Engine', value: 'Unity' }
+];
+---
+
+<ProjectLayout
+    title="Unheard Scream"
+    icon="😱"
+    bannerText="UNHEARD SCREAM BANNER ARTWORK"
+    bannerImage={bannerSrc.src}
+    currentBreadcrumb="😱 Unheard Scream"
+    metadata={projectMeta}
+>
+    <section class="content-section">
+        <h3>Overview</h3>
+        <p>
+            <a href="https://itch.io" target="_blank" style="color: var(--text-body);" rel="noopener noreferrer">
+                🔗 Play Unheard Scream on Itch.io - 60,000+ Downloads!
+            </a>
+        </p>
+
+        <YouTubeVideo id="SFs7-SYTqT0" title="Unheard Scream -  Gameplay Trailer for Co-op Horror Puzzle Game" />
+        <p>
+            Unheard Scream is a first-person co-op puzzle horror game where players assume the role of urban explorers trapped in a sealed subway station. Hunted by a horrifying, sound-sensitive creature, players must split up, rely on limited communication via radio booths, and collaborate to solve interconnected puzzles to escape.
+        </p>
+        <p>
+            I pitched the initial concept for the game and served as a core designer throughout its development. Working closely with the programming and art teams, my primary focus was designing the core game mechanics, balancing the monster's behavior, and crafting an immersive, data-driven level layout. I am incredibly proud that our team's hard work resulted in a successful release with over 60,000 downloads.
+        </p>
+    </section>
+
+    <section class="content-section">
+        <h2>My Responsibilities & Impact</h2>
+        <ul class="impact-list">
+            <li>
+                <strong>Core Mechanics & Edge Case Logic:</strong> I designed the primary game mechanics, including the communication radio booths and the player healing system. I wrote comprehensive visual documentation covering all potential edge cases to ensure clear logic for implementation.
+            </li>
+            <li>
+                <strong>Asymmetric Co-Op Puzzle Design:</strong> Collaborating with our Gameplay Director, I designed puzzles that require verbal communication and implemented randomized variables to guarantee high replayability.
+            </li>
+            <li>
+                <strong>Monster Balancing & Waypointing:</strong> I designed the monster's behavior loop and balanced speed, sight, and hearing range. I manually placed all patrol waypoints and distributed hiding spots to create consistent tension.
+            </li>
+            <li>
+                <strong>Data-Driven Level Iteration:</strong> I worked on a custom player-tracking system to analyze movement patterns. I used this data to iterate on the map layout, adjusting sightlines to naturally guide players.
+            </li>
+        </ul>
+    </section>
+
+    <section class="content-section">
+        <h2>Development Deep Dive</h2>
+
+        <div class="deep-dive-block">
+            <h3>1. Visual Documentation & Game Architecture</h3>
+            <div class="media-single-wide">
+                <img src={miroDiagram.src} alt="Miro Board Architecture Diagram" class="asset-image" />
+            </div>
+            <ul class="dive-bullets">
+                <li>
+                    <strong>The Process:</strong> To keep our small team agile, I maintained all Game Design Documentation visually in Miro. This allowed me to clearly map out complex mechanic edge cases (e.g., "What happens if Player 1 calls Player 2, but Player 3 is already calling Player 1?") and deliver actionable logic to the programming team.
+                </li>
+            </ul>
+        </div>
+
+        <div class="deep-dive-block">
+            <h3>2. Designing High-Stakes, Asymmetric Puzzles</h3>
+            <div class="media-stack-overlap">
+                <img src={puzzleScreenshot.src} alt="Puzzle Interface Top" class="asset-image main-img" />
+                <video src={vidFourth} autoplay muted loop playsinline class="asset-video overlay-vid"></video>
+            </div>
+            <ul class="dive-bullets">
+                <li>
+                    <strong>The Challenge:</strong> We needed a puzzle that forced players to truly cooperate without just being a simple "press two buttons at the same time" mechanic.
+                </li>
+                <li>
+                    <strong>The Execution:</strong> We separated the players—giving one the input mechanism and the other the randomized solution data.
+                </li>
+                <li>
+                    <strong>The Result:</strong> Because the monster hunts by sound, using the radio to solve puzzles created systemic tension. Every time players spoke, they took a calculated risk.
+                </li>
+            </ul>
+        </div>
+
+        <div class="deep-dive-block">
+            <h3>3. Balancing the Monster & Tension</h3>
+            <div class="media-grid-2col">
+                <img src={monsterSpreadsheet.src} alt="Monster Parameters" class="asset-image" />
+                <video src={vidSecond} autoplay muted loop playsinline class="asset-video"></video>
+            </div>
+            <ul class="dive-bullets">
+                <li>
+                    <strong>The Execution:</strong> A horror game lives or dies on its monster. I balanced sight, hearing, and speed against player abilities. By testing hiding spot distributions in greybox, I ensured the monster felt terrifying without feeling unfair.
+                </li>
+            </ul>
+        </div>
+
+        <div class="deep-dive-block">
+            <h3>4. Data-Driven Level Design (Path Tracking)</h3>
+            <div class="media-grid-2col captioned">
+                <div class="media-item">
+                    <img src={heatmapGraph.src} alt="Heatmap Iteration 1" class="asset-image" />
+                    <p class="asset-caption">Steps and iterations of the Level Design. From the Flow Map to the final result.</p>
+                </div>
+                <div class="media-item">
+                    <div class="placeholder-img">
+                         <img src={heatmapGraph.src} alt="Heatmap Iteration 2" class="asset-image" style="filter: hue-rotate(90deg);" />
+                    </div>
+                    <p class="asset-caption">Path-Tracking System for level design iterations.</p>
+                </div>
+            </div>
+            <ul class="dive-bullets">
+                <li>
+                    <strong>The Challenge:</strong> In exploration games, players can get frustrated if layout doesn't guide them. We needed to know how testers navigated the subway.
+                </li>
+                <li>
+                    <strong>The Solution:</strong> I requested a tracking tool recording every player's path. I identified bottlenecks where players were walking in circles.
+                </li>
+                <li>
+                    <strong>The Result:</strong> I iterated on the greybox design, adjusting layout and landmarks, reducing frustration before committing to 3D art.
+                </li>
+            </ul>
+        </div>
+    </section>
+</ProjectLayout>
+
+<style>
+    /* Section Spacing */
+    .deep-dive-block {
+        margin-bottom: 4rem;
+    }
+
+    .deep-dive-block h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        color: var(--text-main, #fff);
+    }
+
+    .video-container {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9; /* enforces 16:9 aspect ratio automatically */
+        margin: 1.5rem 0 2rem 0;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #111;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    /* 1. Single Wide Media */
+    .media-single-wide {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    .media-single-wide img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    /* 2. Overlapping Media Style */
+    .media-stack-overlap {
+        position: relative;
+        padding-bottom: 15%; /* Space for the overlap */
+        margin-bottom: 2rem;
+    }
+    .media-stack-overlap .main-img {
+        width: 70%;
+        border-radius: 4px;
+        display: block;
+    }
+    .media-stack-overlap .overlay-vid {
+        position: absolute;
+        width: 50%;
+        right: 0;
+        bottom: 0;
+        border-radius: 4px;
+        box-shadow: -5px -5px 15px rgba(0,0,0,0.5);
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* 3. Standard 2-Column Media */
+    .media-grid-2col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    .media-grid-2col .asset-image,
+    .media-grid-2col .asset-video {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    /* 4. Captioned Style */
+    .media-grid-2col.captioned {
+        align-items: start;
+    }
+    .asset-caption {
+        font-size: 0.8rem;
+        color: #999;
+        margin-top: 0.5rem;
+        line-height: 1.3;
+    }
+
+    /* Bullets */
+    .dive-bullets {
+        list-style: none;
+        padding-left: 0;
+    }
+    .dive-bullets li {
+        position: relative;
+        padding-left: 1.25rem;
+        margin-bottom: 0.75rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: rgba(255,255,255,0.85);
+    }
+    .dive-bullets li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--text-main, #fff);
+    }
+
+    @media (max-width: 768px) {
+        .media-grid-2col {
+            grid-template-columns: 1fr;
+        }
+        .media-stack-overlap .main-img,
+        .media-stack-overlap .overlay-vid {
+            width: 100%;
+            position: static;
+        }
+    }
+</style>
