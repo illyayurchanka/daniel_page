@@ -12,7 +12,6 @@ import vidFourth from '../assets/unheard-scream/fourth_image.mp4';
 import monsterSpreadsheet from '../assets/unheard-scream/fifth_image.png';
 import heatmapGraph from '../assets/unheard-scream/six_image.jpg';
 const projectMeta = [
-    { label: '⏰ Created', value: 'June 15, 2026 4:08 PM' },
     { label: '💼 Role', value: 'Game Designer & Level Designer' },
     { label: '📅 Timeline', value: 'Oct 2024 - Feb 2025' },
     { label: '👥 Team Size', value: '6' },
@@ -31,12 +30,12 @@ const projectMeta = [
     <section class="content-section">
         <h3>Overview</h3>
         <p>
-            <a href="https://itch.io" target="_blank" style="color: var(--text-body);" rel="noopener noreferrer">
+            <a href="https://limestudio.itch.io/unheard-scream" target="_blank" style="color: var(--text-body);" rel="noopener noreferrer">
                 🔗 Play Unheard Scream on Itch.io - 60,000+ Downloads!
             </a>
         </p>
 
-        <YouTubeVideo id="SFs7-SYTqT0" title="Unheard Scream -  Gameplay Trailer for Co-op Horror Puzzle Game" />
+    <YouTubeVideo id="SFs7-SYTqT0" title="Unheard Scream -  Gameplay Trailer for Co-op Horror Puzzle Game" />
         <p>
             Unheard Scream is a first-person co-op puzzle horror game where players assume the role of urban explorers trapped in a sealed subway station. Hunted by a horrifying, sound-sensitive creature, players must split up, rely on limited communication via radio booths, and collaborate to solve interconnected puzzles to escape.
         </p>
@@ -49,16 +48,16 @@ const projectMeta = [
         <h2>My Responsibilities & Impact</h2>
         <ul class="impact-list">
             <li>
-                <strong>Core Mechanics & Edge Case Logic:</strong> I designed the primary game mechanics, including the communication radio booths and the player healing system. I wrote comprehensive visual documentation covering all potential edge cases to ensure clear logic for implementation.
+                <strong>Core Mechanics & Edge Case Logic:</strong> I designed the primary game mechanics, including the communication radio booths and the player healing system. Because these mechanics involved complex player-to-player interactions, I wrote comprehensive visual documentation covering all potential edge cases to ensure our programmer had clear, bug-free logic to implement.
             </li>
             <li>
-                <strong>Asymmetric Co-Op Puzzle Design:</strong> Collaborating with our Gameplay Director, I designed puzzles that require verbal communication and implemented randomized variables to guarantee high replayability.
+                <strong>Asymmetric Co-Op Puzzle Design:</strong> Collaborating closely with our Gameplay Director, Rebecca, I designed the game's core asymmetric puzzles. I specifically engineered these to require verbal communication between isolated players and implemented randomized data variables to guarantee high replayability across multiple playthroughs.
             </li>
             <li>
-                <strong>Monster Balancing & Waypointing:</strong> I designed the monster's behavior loop and balanced speed, sight, and hearing range. I manually placed all patrol waypoints and distributed hiding spots to create consistent tension.
+                <strong>Monster Balancing & Waypointing:</strong> I designed the monster's general behavior loop and balanced its attributes (speed, size, sight/hearing range). Additionally, I manually placed all waypoints for its patrolling state and strategically distributed hiding spots throughout the environment to create consistent tension.
             </li>
             <li>
-                <strong>Data-Driven Level Iteration:</strong> I worked on a custom player-tracking system to analyze movement patterns. I used this data to iterate on the map layout, adjusting sightlines to naturally guide players.
+                <strong>Data-Driven Level Iteration:</strong> I collaborated with our programmer to build a custom player-tracking system. This allowed me to analyze exactly which corridors players favored, where they got lost walking in circles, and which areas were completely ignored. I then used this data to iterate on the map layout, adjusting sightlines and environmental cues to naturally guide players.
             </li>
         </ul>
     </section>
@@ -69,30 +68,29 @@ const projectMeta = [
         <div class="deep-dive-block">
             <h3>1. Visual Documentation & Game Architecture</h3>
             <div class="media-single-wide">
-                <img src={miroDiagram.src} alt="Miro Board Architecture Diagram" class="asset-image" />
+                <img src={miroDiagram.src} alt="Miro Board Architecture Diagram" class="image-asset" />
             </div>
             <ul class="dive-bullets">
                 <li>
-                    <strong>The Process:</strong> To keep our small team agile, I maintained all Game Design Documentation visually in Miro. This allowed me to clearly map out complex mechanic edge cases (e.g., "What happens if Player 1 calls Player 2, but Player 3 is already calling Player 1?") and deliver actionable logic to the programming team.
+                    <strong>The Process:</strong> To keep our small team agile, I maintained all Game and Level Design Documentation visually in Miro. This allowed me to clearly map out complex mechanic edge cases (e.g., "What happens if Player 1 calls Player 2, but Player 3 is already calling Player 1?") and deliver actionable logic to the programming team without burying them in heavy text documents.
                 </li>
             </ul>
         </div>
 
         <div class="deep-dive-block">
             <h3>2. Designing High-Stakes, Asymmetric Puzzles</h3>
-            <div class="media-stack-overlap">
-                <img src={puzzleScreenshot.src} alt="Puzzle Interface Top" class="asset-image main-img" />
-                <video src={vidFourth} autoplay muted loop playsinline class="asset-video overlay-vid"></video>
+            <div class="media-single-wide">
+                <video src={vidSecond} autoplay muted loop playsinline class="video-asset"></video>
             </div>
             <ul class="dive-bullets">
                 <li>
-                    <strong>The Challenge:</strong> We needed a puzzle that forced players to truly cooperate without just being a simple "press two buttons at the same time" mechanic.
+                    <strong>The Challenge:</strong> We needed a puzzle that forced players to truly cooperate without just being a simple "press two buttons at the same time" mechanic. It also needed to remain challenging and replayable across multiple playthroughs.
                 </li>
                 <li>
-                    <strong>The Execution:</strong> We separated the players—giving one the input mechanism and the other the randomized solution data.
+                    <strong>The Execution:</strong> I co-designed the primary puzzle system with our Gameplay Director. We separated the players—giving one the input mechanism and the other the randomized solution data.
                 </li>
                 <li>
-                    <strong>The Result:</strong> Because the monster hunts by sound, using the radio to solve puzzles created systemic tension. Every time players spoke, they took a calculated risk.
+                    <strong>The Result:</strong> Because the monster hunts by sound, forcing players to use the in-game radio to communicate randomized puzzle solutions created a massive, systemic tension. Every time players spoke to solve the puzzle, they took a calculated risk of drawing the monster to their location, perfectly blending our puzzle mechanics with the core horror loop.
                 </li>
             </ul>
         </div>
@@ -100,12 +98,12 @@ const projectMeta = [
         <div class="deep-dive-block">
             <h3>3. Balancing the Monster & Tension</h3>
             <div class="media-grid-2col">
-                <img src={monsterSpreadsheet.src} alt="Monster Parameters" class="asset-image" />
-                <video src={vidSecond} autoplay muted loop playsinline class="asset-video"></video>
+                <img src={puzzleScreenshot.src} alt="Puzzle Interface Top" class="image-asset main-img" />
+                <video src={vidFourth} autoplay muted loop playsinline class="video-asset overlay-vid"></video>
             </div>
             <ul class="dive-bullets">
                 <li>
-                    <strong>The Execution:</strong> A horror game lives or dies on its monster. I balanced sight, hearing, and speed against player abilities. By testing hiding spot distributions in greybox, I ensured the monster felt terrifying without feeling unfair.
+                    <strong>The Execution:</strong> - A horror game lives or dies on its monster. I constantly balanced the creature's sight, hearing ranges, and movement speed against the player's abilities. By carefully placing patrol waypoints and testing hiding spot distributions in the greybox phase, I ensured the monster felt like an ever-present, terrifying threat without feeling unfair.
                 </li>
             </ul>
         </div>
@@ -114,25 +112,23 @@ const projectMeta = [
             <h3>4. Data-Driven Level Design (Path Tracking)</h3>
             <div class="media-grid-2col captioned">
                 <div class="media-item">
-                    <img src={heatmapGraph.src} alt="Heatmap Iteration 1" class="asset-image" />
-                    <p class="asset-caption">Steps and iterations of the Level Design. From the Flow Map to the final result.</p>
+                    <img src={monsterSpreadsheet.src} alt="Monster Parameters" class="image-asset" />
+                    <p class="asset-caption" style="text-align: left;">Steps and iterations of the Level Design. From the Flow Map to the final result.</p>
                 </div>
                 <div class="media-item">
-                    <div class="placeholder-img">
-                         <img src={heatmapGraph.src} alt="Heatmap Iteration 2" class="asset-image" style="filter: hue-rotate(90deg);" />
-                    </div>
+                    <img src={heatmapGraph.src} alt="Heatmap Iteration 2" class="image-asset" style="filter: hue-rotate(90deg);" />
                     <p class="asset-caption">Path-Tracking System for level design iterations.</p>
                 </div>
             </div>
             <ul class="dive-bullets">
                 <li>
-                    <strong>The Challenge:</strong> In exploration games, players can get frustrated if layout doesn't guide them. We needed to know how testers navigated the subway.
+                    <strong>The Challenge:</strong> In a horror/exploration game, players can easily get frustrated if the level layout doesn't naturally guide them. However, a moderate level of confusion in the maze was intended in order to increase the horror element. We needed to know how exactly playtesters were navigating the complex subway environment.
                 </li>
                 <li>
-                    <strong>The Solution:</strong> I requested a tracking tool recording every player's path. I identified bottlenecks where players were walking in circles.
+                    <strong>The Solution:</strong> I requested a custom tracking tool from our programmer that recorded every player's path through the level. By analyzing this data, I identified severe navigational bottlenecks—specifically where players were walking in circles or completely missing vital areas.
                 </li>
                 <li>
-                    <strong>The Result:</strong> I iterated on the greybox design, adjusting layout and landmarks, reducing frustration before committing to 3D art.
+                    <strong>The Result:</strong> I iterated heavily on the greybox level design based on this data, adjusting level layout, lighting, environmental landmarks, and corridor shapes. This drastically reduced frustration and ensured the environment felt intuitive enough before we committed to final 3D art assets.
                 </li>
             </ul>
         </div>
@@ -175,13 +171,6 @@ const projectMeta = [
         width: 100%;
         margin-bottom: 1.5rem;
     }
-    .media-single-wide img {
-        width: 100%;
-        height: auto;
-        max-height: 300px;
-        object-fit: cover;
-        border-radius: 4px;
-    }
 
     /* 2. Overlapping Media Style */
     .media-stack-overlap {
@@ -209,14 +198,8 @@ const projectMeta = [
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
-        margin-bottom: 1.5rem;
-    }
-    .media-grid-2col .asset-image,
-    .media-grid-2col .asset-video {
-        width: 100%;
-        aspect-ratio: 16/9;
-        object-fit: cover;
-        border-radius: 4px;
+        margin: 0 auto 1.5rem;
+        width: 80%;
     }
 
     /* 4. Captioned Style */

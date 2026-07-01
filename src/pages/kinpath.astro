@@ -9,7 +9,6 @@ import generationalLoop from '../assets/kin-path/fourth_image.png';
 import economySpreadsheet from '../assets/kin-path/fifth_image.png';
 
 const projectMeta = [
-    { label: '⏰ Created', value: 'June 15, 2026 4:08 PM' },
     { label: '💼 Role', value: 'Game & Level Designer Intern' },
     { label: '📅 Timeline', value: 'May 2024 – Sep 2024' },
     { label: '🏢 Studio', value: 'Turtle Knight Games' }
@@ -74,8 +73,8 @@ const projectMeta = [
         <div class="deep-dive-block">
             <h3>1. Designing the Generational Loop</h3>
             <div class="media-grid-2col">
-                <video src={vidFirst} autoplay muted loop playsinline class="asset-video"></video>
-                <video src={vidSecond} autoplay muted loop playsinline class="asset-video"></video>
+                <video src={vidFirst} autoplay muted loop playsinline class="video-asset"></video>
+                <video src={vidSecond} autoplay muted loop playsinline class="video-asset"></video>
             </div>
 
             <ul class="dive-bullets">
@@ -91,7 +90,7 @@ const projectMeta = [
         <div class="deep-dive-block">
             <h3>2. Balancing the Autobattler Economy</h3>
             <div class="media-grid-1col">
-                <img src={generationalLoop.src} alt="Autobattler Economy Main Map" class="asset-image" />
+                <img src={generationalLoop.src} alt="Autobattler Economy Main Map" class="image-asset" />
             </div>
 
             <ul class="dive-bullets">
@@ -104,8 +103,8 @@ const projectMeta = [
         <div class="deep-dive-block">
             <h3>3. Designing Dynamic Final Arenas</h3>
             <div class="media-grid-2col">
-                <video src={vidThird} autoplay muted loop playsinline class="asset-video"></video>
-                <img src={economySpreadsheet.src} alt="Dynamic Arena Preview" class="asset-image" />
+                <video src={vidThird} autoplay muted loop playsinline class="video-asset"></video>
+                <img src={economySpreadsheet.src} alt="Dynamic Arena Preview" class="image-asset" />
             </div>
 
             <ul class="dive-bullets">
@@ -125,9 +124,9 @@ const projectMeta = [
             You can read the full document detailing my responsibilities and contributions at Turtle Knight Games below.
         </p>
         <p style="margin-top: 0.5rem;">
-            <a href="#" style="color: var(--text-main); text-decoration: underline; display: inline-flex; align-items: center; gap: 0.5rem;">
-                📄 [Internship Document/Certificate].pdf
-            </a>
+<a href="/pdfs/Internship_Completion_Confirmation_Daniel_Velitskiy (2).pdf" style="color: var(--text-main); text-decoration: underline; display: inline-flex; align-items: center; gap: 0.5rem;" download>
+    📄 [Internship Document/Certificate].pdf
+</a>
         </p>
     </section>
 </ProjectLayout>
@@ -167,24 +166,13 @@ const projectMeta = [
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
-        margin-bottom: 1.5rem;
+        margin: 0 auto 1.5rem;
+        width: 80%;
     }
 
     .media-grid-1col {
         display: block;
-        width: 100%;
-        margin-bottom: 1.5rem;
-    }
-
-    .media-grid-2col .asset-video,
-    .media-grid-2col .asset-image,
-    .media-grid-1col .asset-image,
-    .media-grid-1col .asset-video {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16/9;
-        object-fit: cover;
-        border-radius: 4px;
+        margin: 0 auto 1.5rem;
     }
 
     /* Bullet List Styling */

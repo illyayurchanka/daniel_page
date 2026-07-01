@@ -14,7 +14,6 @@ import vidSevens from '../assets/magic-dodgeball/sevens_image.mp4';
 import arena2 from '../assets/magic-dodgeball/eight_image.png';
 
 const projectMeta = [
-	{ label: '⏰ Created', value: 'June 15, 2026 4:08 PM' },
 	{ label: '💼 Role', value: 'Project Lead, Game Designer, Level Designer' },
 	{ label: '📅 Timeline', value: 'Feb 2025 – Apr 2026' },
 	{ label: '👥 Team Size', value: '7' },
@@ -34,7 +33,7 @@ const projectMeta = [
 	<section class="content-section">
 		<h3>Overview</h3>
 		<p class="steam-link-wrapper">
-			<a href="https://store.steampowered.com/" target="_blank" rel="noopener noreferrer" class="steam-link">
+			<a href="https://store.steampowered.com/app/3780290/Magic_Dodgeball_Homeless_Edition/" target="_blank" rel="noopener noreferrer" class="steam-link">
 				🔗 Play Magic Dodgeball on Steam
 			</a>
 		</p>
@@ -79,9 +78,9 @@ const projectMeta = [
 			</p>
 
 			<div class="document-grid">
-				<img src={miroMindmap.src} alt="Miro Mindmap Loop" class="doc-image" />
-				<img src={uiWireframes.src} alt="UI Wireframes" class="doc-image" />
-				<img src={componentHierarchy.src} alt="Component Hierarchy" class="doc-image" />
+				<img src={miroMindmap.src} alt="Miro Mindmap Loop" class="image-asset" />
+				<img src={uiWireframes.src} alt="UI Wireframes" class="image-asset" />
+				<img src={componentHierarchy.src} alt="Component Hierarchy" class="image-asset" />
 			</div>
 		</div>
 
@@ -93,7 +92,7 @@ const projectMeta = [
 			<p>
 				<strong>The Execution:</strong> I personally conceptualized and designed almost all of the game's buffs, creating over 30 distinct player upgrades. To manage this sheer volume of mechanics, I structured them into a comprehensive priority table. This allowed me to establish an initial baseline for balancing and dictate development priority before we even began implementation.
 			</p>
-			<img src={upgradesMatrix.src} alt="Comprehensive Priority Excel Upgrades Matrix" class="asset-image" style="aspect-ratio: 16/9;" />
+			<img src={upgradesMatrix.src} alt="Comprehensive Priority Excel Upgrades Matrix" class="image-asset" />
 		</div>
 
 		<div class="deep-dive-block">
@@ -104,7 +103,7 @@ const projectMeta = [
 			<p>
 				<strong>The Solution:</strong> Timur (second game designer) and I established a continuous playtesting pipeline to gather hard data. Instead of relying purely on player feedback, we conducted statistical analysis on two key metrics: Pick Rates and Win Rates. The game tracked each playtest session and provided us with data about players’ choices and win rates.
 			</p>
-			<img src={playtestData.src} alt="Playtest Data Analytics Logging Output" class="asset-image" style="aspect-ratio: 16/11;" />
+			<img src={playtestData.src} alt="Playtest Data Analytics Logging Output" class="image-asset" />
 			<p>
 				<strong>The Result:</strong> This data allowed me to identify statistical outliers. I was able to surgically adjust the stats of underperforming buffs and tune down the overpowered ones, resulting in a much healthier competitive ecosystem.
 			</p>
@@ -121,17 +120,17 @@ const projectMeta = [
 
 			<div class="arena-sub-item">
 				<p>• <strong>Arena 1:</strong> The baseline experience featuring a simple, open shape for foundational combat.</p>
-				<img src={arena1.src} alt="Arena 1 Final Layout" class="arena-image" />
+				<img src={arena1.src} alt="Arena 1 Final Layout" class="image-asset" />
 			</div>
 
 			<div class="arena-sub-item">
 				<p>• <strong>Arena 2:</strong> I introduced a moving wall in the center of the map. This created a more interesting shape for ball bounce trajectories and dynamically blocked shooting spaces, forcing players to constantly reposition and re-aim.</p>
-				<video src={vidSevens} autoplay muted loop playsinline class="asset-video"></video>
+				<video src={vidSevens} autoplay muted loop playsinline class="video-asset"></video>
 			</div>
 
 			<div class="arena-sub-item">
 				<p>• <strong>Arena 3:</strong> I added static obstacles in the center to break the battlefield into three distinct "lanes." This created a new meta-gameplay layer focused on hiding from projectiles, calculating trick trajectories, and carefully aiming around cover.</p>
-				<img src={arena2.src} alt="Arena 2 Final Layout" class="arena-image" />
+				<img src={arena2.src} alt="Arena 2 Final Layout" class="image-asset" />
 			</div>
 
 			<p style="margin-top: 1.5rem;">
@@ -168,22 +167,14 @@ const projectMeta = [
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 0.75rem;
-		margin: 1rem 0 1.5rem 0;
+		margin: 1rem auto 1.5rem;
+		width: 80%;
 	}
 
 	@media (max-width: 560px) {
 		.document-grid {
 			grid-template-columns: 1fr;
 		}
-	}
-
-	.doc-image {
-		width: 100%;
-		aspect-ratio: 4 / 3;
-		border-radius: 6px;
-		border: 1px solid var(--border-color);
-		object-fit: cover;
-		display: block;
 	}
 
 	/* Deep Dive 4 - Arena Sub-block layout structures */
@@ -196,27 +187,5 @@ const projectMeta = [
 		font-size: 0.95rem;
 		margin-bottom: 0.5rem;
 	}
-
-	.arena-image {
-		width: 100%;
-		aspect-ratio: 16 / 10;
-		border-radius: 6px;
-		border: 1px solid var(--border-color);
-		object-fit: cover;
-		display: block;
-	}
-
-	.arena-visual-block {
-		width: 100%;
-		aspect-ratio: 16 / 10;
-		border-radius: 6px;
-		border: 1px solid var(--border-color);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: rgba(255,255,255,0.4);
-		font-size: 0.85rem;
-	}
-
 	.block-color-a3 { background-color: #2e363d; }
 </style>

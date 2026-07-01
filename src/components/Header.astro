@@ -1,0 +1,59 @@
+---
+// src/components/Header.astro
+interface Props {
+    currentBreadcrumb: string;
+}
+
+const { currentBreadcrumb } = Astro.props;
+---
+
+<header class="top-nav">
+    <div class="nav-left">
+        <a href="/" class="breadcrumb-link">Daniel Velitskiy Portfol...</a>
+        <span class="separator">/</span>
+        <a href="/" class="breadcrumb-link">Featured Games</a>
+        <span class="separator">/</span>
+        <span class="current-page">{currentBreadcrumb}</span>
+    </div>
+</header>
+
+<style>
+    .top-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50px; /* Fixed height so we can offset the body */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1.5rem;
+        font-size: 0.85rem;
+
+        /* Glassmorphism effect to float nicely over banner images */
+        background-color: rgba(25, 25, 25, 0.85); /* Matches your --bg-color */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 1000;
+    }
+
+    .breadcrumb-link {
+        color: rgba(255, 255, 255, 0.45);
+        text-decoration: none;
+    }
+
+    .breadcrumb-link:hover {
+        text-decoration: underline;
+        color: #ffffff;
+    }
+
+    .separator {
+        margin: 0 0.35rem;
+        color: rgba(255, 255, 255, 0.2);
+    }
+
+    .current-page {
+        color: #ffffff;
+    }
+</style>
