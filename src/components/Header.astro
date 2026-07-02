@@ -13,6 +13,11 @@ const { currentBreadcrumb } = Astro.props;
         <span class="separator">/</span>
         <span class="current-page">{currentBreadcrumb}</span>
     </div>
+    <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+    </button>
     <div class="header-links">
         <a href="mailto:velickijdaniel@gmail.com" class="contact-link">
             <span class="link-icon">
@@ -87,17 +92,62 @@ const { currentBreadcrumb } = Astro.props;
         align-items: center;
         gap: 1.6rem;
     }
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        z-index: 1001;
+    }
+
+    .hamburger-bar {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #fff;
+        border-radius: 1px;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
     @media (max-width: 640px) {
         .top-nav {
-            flex-direction: column;
-            gap: 0.5rem;
-            align-items: flex-start;
-            padding: 1rem 1.5rem;
+            height: auto;
+            min-height: 50px;
+        }
+        .hamburger {
+            display: flex;
         }
         .header-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
             flex-direction: column;
             align-items: flex-start;
-            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            background-color: rgba(25, 25, 25, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            gap: 0.75rem;
+        }
+        .top-nav.nav-open .header-links {
+            display: flex;
+        }
+        .top-nav.nav-open .hamburger-bar:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .top-nav.nav-open .hamburger-bar:nth-child(2) {
+            opacity: 0;
+        }
+        .top-nav.nav-open .hamburger-bar:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
         }
     }
 
@@ -123,3 +173,14 @@ const { currentBreadcrumb } = Astro.props;
     }
 
 </style>
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const topNav = document.querySelector('.top-nav');
+
+    if (hamburger && topNav) {
+        hamburger.addEventListener('click', () => {
+            const isOpen = topNav.classList.toggle('nav-open');
+            hamburger.setAttribute('aria-expanded', isOpen);
+        });
+    }
+</script>
